@@ -1,10 +1,7 @@
 standardBuild(
-    common: "options",
-    idk: "up to you",
-    pullSource: {
-        some: "options"
-    },
-    compile: {
-        more: "options"
-    }
+    much: "config",
+    very: "options",
+    deep: [
+        structres: "are possible"
+    ]
 )
