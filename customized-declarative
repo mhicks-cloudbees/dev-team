@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("A. Pull Source") {
+            steps {
+                pullSource(type: "stuff")
+            }
+        }
+        stage("B. Compile") {
+            steps {
+                compile(more: "options")
+            }
+        }
+        stage("C. Unit Tests") {
+            steps {
+                echo "Setup special test doubles"
+                sh "echo magic!"
+                unitTests(more: "options")
+            }
+        }
+        stage("D. Code Coverage") {
+            steps {
+                codeCoverage(more: "options")
+            }
+        }
+        stage("E. Code Quality") {
+            steps {
+                codeQuality(more: "options")
+            }
+        }
+    }
+}
