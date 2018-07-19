@@ -1,0 +1,10 @@
+standardBuild(
+    common: "options",
+    idk: "up to you",
+    pullSource: {
+        some: "options"
+    },
+    compile: {
+        more: "options"
+    }
+)
