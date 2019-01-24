@@ -2,6 +2,6 @@ standardBuild(
     much: "config",
     very: "options",
     deep: [
-        structres: "are possible"
+        structures: "are possible"
     ]
 )
