@@ -1,0 +1,13 @@
+library identifier: 'custom-steps@master',
+  retriever: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/mhicks-cloudbees/custom-steps.git'
+  ])
+
+standardBuild(
+    much: "config",
+    very: "options",
+    deep: [
+        structures: "are possible"
+    ]
+)

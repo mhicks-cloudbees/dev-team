@@ -1,0 +1,25 @@
+library identifier: 'custom-steps@master',
+  retriever: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/mhicks-cloudbees/custom-steps.git'
+  ])
+
+node() {
+    stage("A. Pull Source") {
+        pullSource(type: "RTC", more: "options")
+    }
+    stage("B. Compile") {
+        compile(more: "options")
+    }
+    stage("C. Unit Tests") {
+        echo "Setup special test doubles"
+        sh "echo Do the magic!"
+        unitTests(more: "options")
+    }
+    stage("D. Code Coverage") {
+        codeCoverage(stillmore: "options")
+    }
+    stage("E. Code Quality") {
+        codeQuality(evermore: "options")
+    }
+}
