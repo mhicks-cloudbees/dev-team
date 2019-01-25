@@ -1,12 +1,12 @@
 node() {
-    library identifier: 'custom-steps@master',
+    def lib = library(identifier: 'custom-steps@master',
       retriever: modernSCM([
         $class: 'GitSCMSource',
         remote: 'https://github.com/mhicks-cloudbees/custom-steps.git'
-      ])
+      ]))
 
     stage("A. Pull Source") {
-        pullSource(type: "RTC", more: "options")
+        lib.pullSource(type: "RTC", more: "options")
     }
     stage("B. Compile") {
         compile(more: "options")
